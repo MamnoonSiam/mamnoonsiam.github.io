@@ -8,7 +8,7 @@ category: [Data Structure]
 share-img: '/img/pseg/feature.png'
 permalink: '/posts/persistent-segment-tree-01/'
 ---
-এই Tutorial এ Persistent Segment Tree এর কিছু Basic Idea নিয়ে আলোচনা করব।   
+এই Tutorial এ Persistent Segment Tree এর কিছু Basic Idea নিয়ে আলোচনা করব।
 ### **Prerequisites**
 + Segment Tree সম্পর্কে ভাল Idea থাকা।
 + Segment Tree এর অন্তত ২০~৩০টি প্রব্লেম সল্ভ করা।
