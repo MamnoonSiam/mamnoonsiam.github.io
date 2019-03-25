@@ -16,7 +16,7 @@ permalink: '/posts/persistent-segment-tree-01/'
 + এই পোষ্ট সম্পুর্ণ বুঝে পড়ার ধৈর্য থাকা।
 
 ### **Persistency কি জিনিস?**
-> কোন Data Structure যখন বিভিন্ন State এ তার অবস্থা মনে রাখতে পারে, তখন থাকে Persistent Data Structure বলে।
+> yoyo
 
 যেমন এই প্রব্লেম টা দেখা যাক -
 > You are given an initial array with $N$ elements. You need to do $Q$ queries of two types -
