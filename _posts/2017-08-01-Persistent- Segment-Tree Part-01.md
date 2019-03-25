@@ -8,7 +8,7 @@ category: [Data Structure]
 share-img: '/img/pseg/feature.png'
 permalink: '/posts/persistent-segment-tree-01/'
 ---
-এই Tutorial এ Persistent Segment Tree এর কিছু Basic Idea নিয়ে আলোচনা করব।
+এই Tutorial এ Persistent Segment Tree এর কিছু Basic Idea নিয়ে আলোচনা করব।   
 ### **Prerequisites**
 + Segment Tree সম্পর্কে ভাল Idea থাকা।
 + Segment Tree এর অন্তত ২০~৩০টি প্রব্লেম সল্ভ করা।
@@ -16,7 +16,7 @@ permalink: '/posts/persistent-segment-tree-01/'
 + এই পোষ্ট সম্পুর্ণ বুঝে পড়ার ধৈর্য থাকা।
 
 ### **Persistency কি জিনিস?**
-> yoyo
+> কোন Data Structure যখন বিভিন্ন State এ তার অবস্থা মনে রাখতে পারে, তখন থাকে Persistent Data Structure বলে।
 
 যেমন এই প্রব্লেম টা দেখা যাক -
 > You are given an initial array with $N$ elements. You need to do $Q$ queries of two types -
