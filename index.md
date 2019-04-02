@@ -1,12 +1,1 @@
-### Data Structure Problem List
-[ ] [Intervals of Intervals - Codeforces](https://codeforces.com/problemset/problem/1034/D)
-[ ] [ELCA - Codeforces](https://codeforces.com/problemset/problem/482/E)
-[ ] [Summer Oenothera Exhibition - Codeforces](https://codeforces.com/problemset/problem/1039/E)
-[ ] [Array Covering - Codeforces](https://codeforces.com/contest/720/problem/F)
-[ ] [Slalom - Codeforces](https://codeforces.com/contest/720/problem/D)
-[ ] [Max Mex - Codeforces](https://codeforces.com/problemset/problem/1083/C)
-[ ] [New Home - APIO 2018](https://oj.uz/problem/view/APIO18_new_home) ([Editorial](https://codeforces.com/blog/entry/59650))
-[ ] [Circle Selection - APIO 2018](https://oj.uz/problem/view/APIO18_circle_selection) ([Editorial](https://codeforces.com/blog/entry/59650))
-[ ] [The Fair Nut's getting crazy](https://codeforces.com/contest/1083/problem/D)
-[ ] [The Fair Nut and Amusing Xor](https://codeforces.com/contest/1083/problem/F)
-[ ] [Iqea](https://codeforces.com/problemset/problem/936/E)
+# Hey There!
