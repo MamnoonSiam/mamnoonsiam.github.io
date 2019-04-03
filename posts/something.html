@@ -28,18 +28,24 @@ pre {
 
 
 <div id="main">
-<p><a href="http://fredrikj.net">fredrikj.net</a> / <a href="http://fredrikj.net/blog">blog</a> / </p>
-<h1>Eigenvalues in Arb</h1>
-<p><i>December 2, 2018</i></p>
+<h1>Solution</h1>
+<p><i>April 3, 2019</i></p>
 
 
 <p>
 For each $a_i$ if the number $a_i$ has position $j$ in $p$, let's find the greatest $l$, such that $l$ is less then $i$ and $a_l = p_{j - 1}$ (let's define $p_0$ = $p_n$) We will call this position $b_i$. This can be done in $O(n)$ time, just for each $p_j$ we will keep the last it's position in a while iterating over $a$.
+</p>
 
-Now let's notice that using this info for each $i$ we can find the beginning of right most subsequence of $a$ which is a ciclic shift of $p$ and ends exactly at $a_i$. This can easily be done because if there is a subsequence of $a$ $a_{i_1}, a_{i_2} \ldots, a_{i_{n - 1}}, a_i$, which is the right most such subsequence, then ${i_{n - 1}}$ is $b_i, i_{n- 2}$ is $b_{i_{n - 1}}$, and so on. So to find such subsequence and the position of it's beginning, we need to calculate $b[b[b \ldots b[i] \ldots ]]$ $n - 1$ times. To do it we can use binary lifting. Then we will have $O(m \log n)$ precalc and we will get the beginning of such subsequence in $O(\log n)$ time.
+<p>
+Now let's notice that using this info for each $i$ we can find the beginning of right most subsequence of $a$ which is a ciclic shift of $p$ and ends exactly at $a_i$. This can easily be done because if there is a subsequence of $a$ $a_{i_1}, a_{i_2} \ldots, a_{i_{n - 1}}, a_i$, which is the right most such subsequence, then ${i_{n - 1}}$ is $b_i, i_{n- 2}$ is $b_{i_{n - 1}}$, and so on. So to find such subsequence and the position of it's beginning, we need to calculate $b[b[b \ldots b[i] \ldots ]]$ $n - 1$ times. To do it we can use binary lifting. Then we will have $O(m \log n)$ precalc and we will get the beginning of such 
+subsequence in $O(\log n)$ time.
+</p>
 
+<p>
 Now for each prefix of a let's calculate the the beginning of right most subsequence of it, which is a cyclic shift of $p$. This can be calculated in linear time, first we look at the answer for this prefix without the last number, and then update it with the right most subsequence, which ends at the end of prefix.
+</p>
 
+<p>
 Now we can answer each query in $O(1)$ time, because we just need to find the beginning of the right most subsequence, which ends at prefix of length $r$ and compare it with $l$.
 </p>
 
