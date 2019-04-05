@@ -30,7 +30,7 @@ Now let's notice that using this info for each $i$ we can find the beginning of 
 subsequence in $O(\log n)$ time.
 </p>
 
-<center><img src="/home/mamnoon-siam/Programming/Github/mamnoonsiam.github.io/img/something/tree.png"></center>
+<center><img src="/img/something/tree.png"></center>
 
 <p>
 Now for each prefix of a let's calculate the the beginning of right most subsequence of it, which is a cyclic shift of $p$. This can be calculated in linear time, first we look at the answer for this prefix without the last number, and then update it with the right most subsequence, which ends at the end of prefix.
