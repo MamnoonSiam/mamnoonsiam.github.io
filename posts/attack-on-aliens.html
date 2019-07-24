@@ -12,7 +12,8 @@
                     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
                     processEscapes: true
                 },
-                "HTML-CSS": { availableFonts: ["TeX"] }
+                "HTML-CSS": { availableFonts: ["TeX"] },
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
             });
         </script>
         <script type="text/javascript" async
@@ -49,26 +50,15 @@
     <h4><i>July 8, 2019</i></h4>
     
     <p>
-        There was a problem in <a href="http://ioi2016.ru/">International Olympiad in Informatics 2016</a> whose name was <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">'Aliens'</a>. Its full solution uses an unconventional technique which I'll be trying to explain in this post. The trick is often named after this problem, "Aliens' Trick". Frankly speaking, this technique was literally alien to me untill few moments before I started writing this post.
+        There was a problem in <a href="http://ioi2016.ru/">International Olympiad in Informatics 2016</a> whose name was <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">'Aliens'</a>. Its full solution uses an unconventional technique which I'll be trying to explain in this post. The trick is often named after this problem, "Aliens' Trick". Frankly speaking, this technique was literally alien to me untill few moments before I started writing this post. <a href="https://youtu.be/0qLGCBueZ34?t=76">My feeling</a> - when I realized the underlying idea of the trick.
     </p>
-
-    <center>
-        <figure>
-            <!-- <img src="https://media.giphy.com/media/pqwrzHIUonz4Q/giphy.gif"> -->
-            <img src="/img/attack-on-aliens/high_jesse_pinkman.gif">
-            <!-- <img src="/home/mamnoon-siam/Programming/Github/mamnoonsiam.github.io/img/attack-on-aliens/high_jesse_pinkman.gif"> -->
-            <figcaption>
-                My feeling - when I realized the underlying idea of the trick. Full version available <a href="https://youtu.be/0qLGCBueZ34?t=76">here</a>.
-            </figcaption>
-        </figure>
-    </center>
 
     <h2>The Background Problem</h2>
     <p>
         The problem which ignited the process of realization of this technique is <a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=697">Building a Tall Barn</a> from USACO 2017 January Contest, Platinum Division.
     </p>
     <p>
-        <b>Abridge Statement:</b> You are constructing an $N$-story building and you have $K$ ($1 \leq N \leq K \leq 10^{12}$ and $N \leq 10^5$) cows to do this job. You have to assign every cow to work at exactly one floor and each floor must have at least one cow assigned to it. If you assign $c_i$ cows to the $i$-th floor, it will take $a_i/c_i$ units of time to complete that floor. Also, floor $i$ must be completed before construction can begin on floor $i+1$. You need to compute the minimum total time in which the construction can be completed, if the cows are assigned to work on floors in an optimal fashion, that is, you have find the minimum possible value of $\sum_{i=1}^{N}a_i/c_i$.
+        <b>Abridge Statement:</b> You are constructing an $N$-story building and you have $K$ ($1 \leq N \leq K \leq 10^{12}$ and $N \leq 10^5$) cows to do this job. You have to assign every cow to work at exactly one floor and each floor must have at least one cow assigned to it. If you assign $c_i$ cows to the $i$-th floor, it will take $a_i/c_i$ units of time to complete that floor. Also, floor $i$ must be completed before construction can begin on floor $i+1$. You need to compute the minimum total time in which the construction can be completed, if the cows are assigned to work on floors in an optimal fashion, that is, you have find the minimum possible value of $\sum_{i=1}^{N}a_i/c_i$. Output this number rounded to the nearest integer.
     </p>
 
     <p>
@@ -88,7 +78,7 @@
     </center>
 
     <p>
-        If you had infinitely many cows you would keep employing them. But if you had to pay some amount of penalty for using each of those cows you wouldn't use many of them. Let $g(m)$ be the minimum amount of time we will need to complete construction if we have to pay a penalty (cows have a right to receive salary, dont they?) of $m$ per cow and $g_c(m)$ $(g_c: D_{g_c} \rightarrow R_{g_c}, R_{g_c} \subseteq \mathbb{N})$ be the number of cows in such assignment (maximize the number of cows when multiple assignment minimizes time). To solve this, we may just adapt the previous greedy algorithm, but, we must stop in such an iteration when our maximum profiting weight is less than $m$ (note that, <b>'less'</b> comparison allows us to maximize the number of cows, however, if we had used <b>'less than or equal to'</b> comparison, we would have minimized the number of cows). Note that, we already have a way to calculate final $c_i$ in $O(1)$ &mdash; for floor $i$, you will keep adding cows till the following inequality satisfies: $\frac{a_i}{c_i (c_i + 1)} \ge m \implies c^2 + c - \frac{a_i}{m} \le 0$ which implies final $c_i = \left \lfloor \frac{\sqrt{1 + \frac{4a_i}{m}} - 1}{2} \right \rfloor + 1$. Now we can find $g(m)$ and $g_c(m)$ in $O(N)$. But what actually $g(m)$ and $g_c(m)$ are calculating?
+        If you had infinitely many cows you would keep employing them. But if you had to pay some amount of penalty for using each of those cows you wouldn't use many of them. Let $g(m)$ be the minimum amount of time we will need to complete construction if we have to pay a penalty (cows have a right to receive salary, dont they?) of $m$ per cow and $g_c(m)$ $(g_c: D_{g_c} \rightarrow R_{g_c}, R_{g_c} \subseteq \mathbb{N})$ be the number of cows in such assignment (maximize the number of cows when multiple assignment minimizes time). We will refer calculating $g$ and $g_c$ as <b>$K$-loose version</b> of the main problm. To solve this, we may just adapt the previous greedy algorithm, but, we must stop in such an iteration when our maximum profiting weight is less than $m$ (note that, <b>'less'</b> comparison allows us to maximize the number of cows, however, if we had used <b>'less than or equal to'</b> comparison, we would have minimized the number of cows). Note that, we already have a way to calculate final $c_i$ in $O(1)$ &mdash; for floor $i$, you will keep adding cows till the following inequality satisfies: $\frac{a_i}{c_i (c_i + 1)} \ge m \implies c^2 + c - \frac{a_i}{m} \le 0$ which implies final $c_i = \left \lfloor \frac{\sqrt{1 + \frac{4a_i}{m}} - 1}{2} \right \rfloor + 1$. Now we can find $g(m)$ and $g_c(m)$ in $O(N)$. But what actually $g(m)$ and $g_c(m)$ are calculating?
     </p>
 
     <center>
@@ -100,7 +90,7 @@
     </center>
 
     <p>
-        Upon giving some slope $m$ (again, our slope is the additive inverse of the traditional slope), the two functions give us the point where the line with slope $m$ touches the lower convex hull of the function $f$ &mdash; the coordinate of that point is $(g_c(m), f(g_c(m)))$. As $g$ is non-increasing, we can gradually decrease the value of $m$ and at some point we will encounter $g_c(m) = K$. By properly engineering the monotonicity of $g_c$, we can binary search for which $m$ we will obtain $g_c(m) = K$. We also know that $f(g_c(m)) = g(m) - g_c(m) \cdot m$. Thus, if we have the value of $g(m)$ and $g_c(m) = K$, finding the value of $f(K)$ is like shooting fish in a barrel.
+        Upon giving some slope $m$ (again, our slope is the additive inverse of the traditional slope), the two functions give us the point where the line with slope $m$ touches the lower convex hull of the function $f$ &mdash; the coordinate of that point is $(g_c(m), f(g_c(m)))$. As $g$ is non-increasing, we can gradually decrease the value of $m$ and at some point we will encounter $g_c(m) = K$. By properly engineering the monotonicity of $g_c$, we can binary search for which $m$ we will obtain $g_c(m) = K$. We also know that $f(g_c(m)) = g(m) - m \cdot g_c(m)$. Subtituting $g_c(m) = K$, we get $f(K) = g(m) - K\cdot m$.
     </p>
 
     <center>
@@ -116,5 +106,51 @@
     <p>
         But here's a catch that may have been irritating you for a while: what if there's few consecutive slopes which are all equal to $m$. Formally, consider the scenario where $m_l = m_{l+1} = \ldots = m_{r} = m$ $(l < r)$. From the definition of $g_c$, in these kind of abnormalities $g_c(m)$ will be equal to $r$. As a result of this, the range of $g_c$, $R_{g_c}$ will miss out all the integers $ \in [l, r)$. So, if $K \in [l, r)$, we will not find any such intended $m$ for sure.
     </p>
+
+    <p>
+        <b>Improvise. Adapt. Overcome.</b> Now, we have several things: $m_l = m_{l+1} = \ldots = m_{r}$ $(l \le r)$ and $K \in [l, r]$ (note that, I've changed the right end of the interval from excluded to included and '$<$' to '$\le$' because we are about to generalize for any $K$). To tackle this, instead of trying to attain $g_c(x) = K$, we will find maximum $m_{opt}$, such that $g_c(m_{opt}) \ge K$. This will yield $m_{opt} = m_r = m_K$. Note that, $\forall i \in [l-1, r]$,
+        $$f(i) = f(K) - (i - K) \cdot m_{opt}$$
+        \begin{equation}
+            \implies f(K) = f(i) + (i - K) \cdot m_{opt}
+        \end{equation}
+        \begin{equation}
+            \implies f(K) = f(r) + (r - K) \cdot m_{opt}
+        \end{equation}
+        Also, we know that, $g_c(m_i) = i$ and $f(g_c(m)) = g(m) - m \cdot g_c(m)$, which implies:
+        $$f(r) = g(m_r) - m_r \cdot r$$
+        \begin{equation}
+            \implies f(r) = g(m_{opt}) - m_{opt} \cdot r
+        \end{equation}
+        By adding $m_{opt} \cdot (r - K)$ to both sides of $(2)$-
+        \begin{equation}
+            f(r) + m_{opt} \cdot (r - K) = g(m_{opt}) - m_{opt} \cdot r + m_{opt} \cdot (r - K)
+        \end{equation}
+        Combining $(3)$ and $(1)$ we get,
+        \begin{equation}
+            f(K) = g(m_{opt}) - m_{opt} \cdot K
+        \end{equation}
+        Now, we just need to binary search $m_{opt}$! An important thing to note in this problem is, we are binary searching over $\mathbb{R}$. So, $m_{opt}$ might not be exactly equal to $m_K$ $( = m_r)$. Instead it might be slightly smaller than $m_K$, leading to inequality of $(1)$. Precisely, we need to rewrite $(1)$ as $f(K) = f(i) + (i - K) \cdot (m_{opt} + \epsilon)$ for some $\epsilon \ge 0$. This would derail $(5)$ to become a not so eye pleasing figure. But, the more iterations we are going to perform for the search, the smaller $\epsilon$ gets, the more precise our answer becomes with the current formula of $f(K)$. Also, the last line of the problem statement states that, "it is guaranteed that the solution will be more than $0.1$ from the boundary between two integers". However, when we are working with integers, we won't need to consider this issue as $m_{opt}$ will be exactly $m_K$.
+    </p>
+
+    <p>One might think that, calculating $f(K)$ by adding something to $f(r)$ may not work all the times, because we may not always find such arrangement which gives us a cost of $f(r) + m_r \cdot (r-K)$. But given the fact that the function is properly defined over the relevant elements and it is convex allows us to assume that such arrangement exists.
+
+    <h2>All we need to do is...</h2>
+    <ul>
+        <li>
+            Convince ourselves that the function is convex (maybe write up some bruteforce before coding a fast enough solution and submit, see if works for small subtasks).
+        </li>
+        <li>
+            Being able to solve the <b>$K$-loose version</b> of the main problem in reasonable time and memory complexity.
+        </li>
+        <li>
+            Binary search.
+        </li>
+        <li>
+            Arsenal.
+        </li>
+        <li>
+            Celebrate.
+        </li>
+    </ul>
     </body>
 </html>
