@@ -62,7 +62,7 @@
     </p>
 
     <p>
-        The following simple (and intuitive) greedy algorithm works: set $c_i = 1, \forall i$. Now iterate this procedure $K - N$ times: pick an index $j$ such that it maximizes the value $\frac{a_j}{c_j} - \frac{a_j}{c_j + 1} = \frac{a_j}{c_j (c_j + 1)}$ and set the value of $c_j$ to $c_j + 1$. At some moment, when the $i$-th floor has $c_i$ cows assigned to it, let's call $\frac{a_i}{c_i (c_i + 1)}$ the <b>profiting weight</b> of $i$-th floor. If we let $T = \sum_{i=1}^{N} a_i / c_i$ which is initially $\sum_{i=1}^{N} a_i$, then we can say that in each iteration we are reducing our $T$ by as much as we can. And also taking the maximum profiting weight in each iteration yields a correct algorithm because every floor's profiting weight decreases as $c_i$ increases. Due to the fact that $K$ is quite big, simulating $K - N$ iterations (maybe even with a priority queue) would take tremendous amount of time. As a matter of fact, roughly $10^9 + 7$ tons of ice will melt in Anterctica by that time.
+        The following simple (and intuitive) greedy algorithm works: set $c_i = 1, \forall i$. Now iterate this procedure $K - N$ times: pick an index $j$ such that it maximizes the value $\frac{a_j}{c_j} - \frac{a_j}{c_j + 1} = \frac{a_j}{c_j (c_j + 1)}$ and set the value of $c_j$ to $c_j + 1$. At some moment, when the $i$-th floor has $c_i$ cows assigned to it, let's call $\frac{a_i}{c_i (c_i + 1)}$ the <b>profiting weight</b> of $i$-th floor. If we let $T = \sum_{i=1}^{N} a_i / c_i$ which is initially $\sum_{i=1}^{N} a_i$, then we can say that in each iteration we are reducing our $T$ by as much as we can. And also taking the maximum profiting weight in each iteration yields a correct algorithm because every floor's profiting weight decreases as $c_i$ increases. Due to the fact that $K$ is quite big, simulating $K - N$ iterations (maybe even with a priority queue) would take tremendous amount of time &mdash; roughly $10^9 + 7$ tons of ice will melt in Anterctica in that time.
     </p>
 
     <p>
@@ -153,7 +153,8 @@
         </li>
     </ul>
 
-    <h2>Some Related Problems</h2>
+    <h1>Some Related Problems &#129389;</h1>
+    <h1>Mamnoon Si&#129389;'s Blog</h1>
     <ul>
         <li>
             <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">IOI 2016 Aliens.</a> There are some objects on $xy$-plane. For taking a square shape picture whose upper-left corner must be in the form of $(i, i)$ you have to pay a cost of the square's size. Calculate the minimum cost of capturing all objects. An object is captured if it is inside or on the boundary of some picture.
