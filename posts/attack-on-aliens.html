@@ -47,10 +47,19 @@
     <body>
 
     <h1>Attack on Aliens: AOA</h1>
-    <h4><i>July 8, 2019</i></h4>
+    <h4><i>July 24, 2019</i></h4>
     
     <p>
-        There was a problem in <a href="http://ioi2016.ru/">International Olympiad in Informatics 2016</a> whose name was <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">'Aliens'</a>. Its full solution uses an unconventional technique which I'll be trying to explain in this post. The trick is often named after this problem, "Aliens' Trick". Frankly speaking, this technique was literally alien to me untill few moments before I started writing this post. <a href="https://youtu.be/0qLGCBueZ34?t=76">My feeling</a> - when I realized the underlying idea of the trick.
+        There was a problem in <a href="http://ioi2016.ru/">International Olympiad in Informatics 2016</a> whose name was <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">'Aliens'</a>. Its full solution uses an unconventional technique which I'll be trying to explain in this post. The trick is often named after this problem, "Aliens' Trick". Frankly speaking, this technique was literally alien to me untill few moments before I started writing this post.
+        <center>
+            <figure>
+                <!-- <img src="https://media.giphy.com/media/pqwrzHIUonz4Q/giphy.gif"> -->
+                <img src="/img/attack-on-aliens/high_jesse_pinkman.gif">
+                <figcaption>
+                    My feeling - when I realized the underlying idea of the trick. Full version available <a href="https://youtu.be/0qLGCBueZ34?t=76">here</a>.
+                </figcaption>
+            </figure>
+        </center>
     </p>
 
     <h2>The Background Problem</h2>
@@ -132,12 +141,12 @@
         Now, we just need to binary search $m_{opt}$! An important thing to note in this problem is, we are binary searching over $\mathbb{R}$. So, $m_{opt}$ might not be exactly equal to $m_K$ $( = m_r)$. Instead it might be slightly smaller than $m_K$, leading to inequality of $(1)$. Precisely, we need to rewrite $(1)$ as $f(K) = f(i) + (i - K) \cdot (m_{opt} + \epsilon)$ for some $\epsilon \ge 0$. This would derail $(5)$ to become a not so eye pleasing figure. But, the more iterations we are going to perform for the search, the smaller $\epsilon$ gets, the more precise our answer becomes with the current formula of $f(K)$. Also, the last line of the problem statement states that, "it is guaranteed that the solution will be more than $0.1$ from the boundary between two integers". However, when we are working with integers, we won't need to consider this issue as $m_{opt}$ will be exactly $m_K$.
     </p>
 
-    <p>One might think that, calculating $f(K)$ by adding something to $f(r)$ may not work all the times, because we may not always find such arrangement which gives us a cost of $f(r) + m_r \cdot (r-K)$. But given the fact that the function is convex and properly defined over the relevant elements allows us to assume that such arrangement exists.
+    <p>One might think that, calculating $f(K)$ by adding something to $f(r)$ may not work all the times, because we may not always find such arrangement which gives us a cost of $f(r) + m_r \cdot (r-K)$. But given the fact that the function is convex and properly defined over the relevant elements (usually a contiguous range, e.g. for this problem it is $[N, K]$) allows us to assume that such arrangement exists.
 
     <h2>All we need to do is...</h2>
     <ul>
         <li>
-            Convince ourselves that the function is convex (maybe write up some bruteforce before coding a fast enough solution and submit, see if works for small subtasks).
+            Convince ourselves that the function is convex/concave (just making sure that the sequence of slopes is monotonic) (maybe write up some bruteforce before coding a fast enough solution and submit, see if works for small subtasks).
         </li>
         <li>
             Being able to solve the <b>$K$-loose version</b> of the main problem in reasonable time and memory complexity.
@@ -153,12 +162,9 @@
         </li>
     </ul>
 
-    <h1>Some Related Problems &#129389;</h1>
-    <h1>Mamnoon Si&#129389;'s Blog</h1>
-    <ul>
-        <li>
-            <a href="https://ioinformatics.org/files/ioi2016problem6.pdf">IOI 2016 Aliens.</a> There are some objects on $xy$-plane. For taking a square shape picture whose upper-left corner must be in the form of $(i, i)$ you have to pay a cost of the square's size. Calculate the minimum cost of capturing all objects. An object is captured if it is inside or on the boundary of some picture.
-        </li>
-    </ul>
+    <h1>Some Related Problems and Solutions of them</h1>
+    <p>
+        Coming soon...
+    </p>
     </body>
 </html>
