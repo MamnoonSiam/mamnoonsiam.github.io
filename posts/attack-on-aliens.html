@@ -19,29 +19,7 @@
         <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <style type="text/css">
-            @font-face {
-                font-family: "Computer Modern Serif Italic";
-                src: url(/home/mamnoon-siam/Programming/Github/mamnoonsiam.github.io/fonts/cmu.serif-italic.ttf);
-            }
-            body {
-                /*font-family: arial, sans-serif;*/
-                font-family: 'Roboto', sans-serif;
-                /*font-family: "Computer Modern Sans", sans-serif;*/
-                /*font-family: "Computer Modern Serif Italic", sans-serif;*/
-                line-height: 1.5em;
-                margin: 5em;
-            }
-            p {
-                text-align:justify;
-                text-justify:inter-word;
-            }
-            a:link { color: #008FFF; text-decoration: none; }
-            a:visited { color: #008FFF; text-decoration: none; }
-            a:hover { color: #008FFF; text-decoration: underline; }
-            a:active { color: #008FFF; }
-        </style>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -54,7 +32,7 @@
         <center>
             <figure>
                 <!-- <img src="https://media.giphy.com/media/pqwrzHIUonz4Q/giphy.gif"> -->
-                <img src="/img/attack-on-aliens/high_jesse_pinkman.gif">
+                <img src="../img/attack-on-aliens/high_jesse_pinkman.gif">
                 <figcaption>
                     My feeling - when I realized the underlying idea of the trick. Full version available <a href="https://youtu.be/0qLGCBueZ34?t=76">here</a>.
                 </figcaption>
@@ -71,7 +49,7 @@
     </p>
 
     <p>
-        The following simple (and intuitive) greedy algorithm works: set $c_i = 1, \forall i$. Now iterate this procedure $K - N$ times: pick an index $j$ such that it maximizes the value $\frac{a_j}{c_j} - \frac{a_j}{c_j + 1} = \frac{a_j}{c_j (c_j + 1)}$ and set the value of $c_j$ to $c_j + 1$. At some moment, when the $i$-th floor has $c_i$ cows assigned to it, let's call $\frac{a_i}{c_i (c_i + 1)}$ the <b>profiting weight</b> of $i$-th floor. If we let $T = \sum_{i=1}^{N} a_i / c_i$ which is initially $\sum_{i=1}^{N} a_i$, then we can say that in each iteration we are reducing our $T$ by as much as we can. And also taking the maximum profiting weight in each iteration yields a correct algorithm because every floor's profiting weight decreases as $c_i$ increases. Due to the fact that $K$ is quite big, simulating $K - N$ iterations (maybe even with a priority queue) would take tremendous amount of time &mdash; roughly $10^9 + 7$ tons of ice will melt in Anterctica in that time.
+        <b>A Greedy Solution.</b> The following simple (and intuitive) greedy algorithm works: set $c_i = 1, \forall i$. Now iterate this procedure $K - N$ times: pick an index $j$ such that it maximizes the value $\frac{a_j}{c_j} - \frac{a_j}{c_j + 1} = \frac{a_j}{c_j (c_j + 1)}$ and set the value of $c_j$ to $c_j + 1$. At some moment, when the $i$-th floor has $c_i$ cows assigned to it, let's call $\frac{a_i}{c_i (c_i + 1)}$ the <b>profiting weight</b> of $i$-th floor. If we let $T = \sum_{i=1}^{N} a_i / c_i$ which is initially $\sum_{i=1}^{N} a_i$, then we can say that in each iteration we are reducing our $T$ by as much as we can. And also taking the maximum profiting weight in each iteration yields a correct algorithm because every floor's profiting weight decreases as $c_i$ increases. Due to the fact that $K$ is quite big, simulating $K - N$ iterations (maybe even with a priority queue) would take tremendous amount of time &mdash; roughly $10^9 + 7$ tons of ice will melt in Anterctica in that time.
     </p>
 
     <p>
@@ -146,7 +124,7 @@
     <h2>All we need to do is...</h2>
     <ul>
         <li>
-            Convince ourselves that the function is convex/concave (just making sure that the sequence of slopes is monotonic) (maybe write up some bruteforce before coding a fast enough solution and submit, see if works for small subtasks).
+            Convince ourselves that the function is convex/concave (just making sure that the sequence of slopes is monotonic) (maybe write up some bruteforce before coding a fast enough solution and submit, see if it works for small subtasks).
         </li>
         <li>
             Being able to solve the <b>$K$-loose version</b> of the main problem in reasonable time and memory complexity.
@@ -162,7 +140,7 @@
         </li>
     </ul>
 
-    <h1>Some Related Problems and Solutions of them</h1>
+    <h2>Some Related Problems and Solutions of them</h2>
     <p>
         Coming soon...
     </p>

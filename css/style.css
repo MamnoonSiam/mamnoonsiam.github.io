@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "CMU Serif Roman";
+    src: url(../css/fonts/cmu-serif-roman.ttf);
+}
+@font-face {
+    font-family: "CMU Serif Italic";
+    src: url(../css/fonts/cmu-serif-italic.ttf);
+}
+@font-face {
+    font-family: "CMU Serif Bold";
+    src: url(../css/fonts/cmu-serif-bold.ttf);
+}
+@font-face {
+    font-family: "CMU Serif Bold Italic";
+    src: url(../css/fonts/cmu-serif-bolditalic.ttf);
+}
+body {
+    font-family: 'CMU Serif Roman', sans-serif;
+    font-size: 1.15em;
+    line-height: 1em;
+    margin: 5em;
+}
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+b {
+    font-family: 'CMU Serif Bold', sans-serif;
+}
+i {
+    font-family: 'CMU Serif Italic', sans-serif;
+}
+em {
+    font-family: 'CMU Serif Bold Italic', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'CMU Serif Bold', sans-serif;
+}
+a:link { color: #008FFF; text-decoration: none; }
+a:visited { color: #008FFF; text-decoration: none; }
+a:hover { color: #008FFF; text-decoration: underline; }
+a:active { color: #008FFF; }
