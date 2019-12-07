@@ -1,3 +1,4 @@
+/*Fonts' source: https://www.fontsquirrel.com/fonts/computer-modern*/
 @font-face {
     font-family: "CMU Serif Roman";
     src: url(../css/fonts/cmu-serif-roman.ttf);
@@ -14,11 +15,26 @@
     font-family: "CMU Serif Bold Italic";
     src: url(../css/fonts/cmu-serif-bolditalic.ttf);
 }
+@font-face {
+    font-family: "CMU Concrete Roman";
+    src: url(../css/fonts/cmu-concrete-roman.ttf);
+}
+@font-face {
+    font-family: "CMU Concrete Italic";
+    src: url(../css/fonts/cmu-concrete-italic.ttf);
+}@font-face {
+    font-family: "CMU Concrete Bold";
+    src: url(../css/fonts/cmu-concrete-bold.ttf);
+}@font-face {
+    font-family: "CMU Concrete Bold Italic";
+    src: url(../css/fonts/cmu-concrete-bold-italic.ttf);
+}
 body {
-    font-family: 'CMU Serif Roman', sans-serif;
+    /*font-family: 'CMU Serif Roman', sans-serif;*/
+    font-family: 'CMU Concrete Roman', sans-serif;
     font-size: 1em;
-    line-height: 1em;
-    margin: 10em;
+    line-height: 1.5em;
+    /*margin: 10em;*/
     margin-top: 3em;
     margin-bottom: 3em;
     margin-left: 10em;
@@ -29,16 +45,20 @@ p {
     text-justify: inter-word;
 }
 b {
-    font-family: 'CMU Serif Bold', sans-serif;
+    /*font-family: 'CMU Serif Bold', sans-serif;*/
+    font-family: 'CMU Concrete Bold', sans-serif;
 }
 i {
-    font-family: 'CMU Serif Italic', sans-serif;
+    /*font-family: 'CMU Serif Italic', sans-serif;*/
+    font-family: 'CMU Concrete Italic', sans-serif;
 }
 em {
-    font-family: 'CMU Serif Bold Italic', sans-serif;
+    /*font-family: 'CMU Serif Bold Italic', sans-serif;*/
+    font-family: 'CMU Concrete Bold Italic', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'CMU Serif Bold', sans-serif;
+    /*font-family: 'CMU Serif Bold', sans-serif;*/
+    font-family: 'CMU Concrete Bold', sans-serif;
 }
 a:link { color: #008FFF; text-decoration: none; }
 a:visited { color: #008FFF; text-decoration: none; }
