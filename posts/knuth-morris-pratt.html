@@ -33,8 +33,35 @@
         <p>Every indexing is $0$-based.</p>
 
         <h3>The $\pi$ Array</h3>
+
         <p>
-            
+            Proper prefix/suffix of a string is a prefix/suffix of that string which is just not the whole string (the whole string is its prefix/suffix, right?... but not a proper prefix/suffix).
+        </p>
+
+        <p>
+            $\pi_S[i]$ = length of the longest proper prefix of $S[0...i]$ which is also its suffix. If there's none, then $\pi_S[i] = 0$ (the empty prefix!).
+        </p>
+
+        <p>
+            Why do we care about this $\pi$ array? Let $Q = P + ``\#" + T$ and calculate $\pi_Q$. Now, $\forall i \in \left [ |P|+1, |Q|-1 \right ]$, if $\pi_Q[i] = |P|$, then we have a matching of $P$ in $T$ which starts from $T[i - (|P|+1) - |P|]$. Although, I don't think that this was the main motivation to find out $\pi$ arrays of strings in the first place.
+        </p>
+
+        <h3>Calculating The $\pi$ Array (for some string $S$)</h3>
+
+        <p>
+            I'd like to think this as some kind of induction-ish approach.
+        </p>
+
+        <p>
+            Undoubtedly, $\pi[0] = 0$.
+        </p>
+
+        <p>
+            Now, suppose we have calculated $\pi[0...k]$. And we want to calculate $\pi[k+1]$.
+        </p>
+
+        <p>
+            <script src="https://ideone.com/e.js/sT8Vd1" type="text/javascript" ></script>
         </p>
 
     </body>
