@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Post Title</title>
+        <script type='text/x-mathjax-config'>
+            MathJax.Hub.Config({
+                extensions: ["tex2jax.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                MMLorHTML: { prefer: "HTML" },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true
+                },
+                "HTML-CSS": { availableFonts: ["TeX"] },
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });
+        </script>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <h1>JOI Spring Camp 2019: Lamps' Solution</h1>
+        <h4><i>March 18, 2020</i></h4>
+
+        <p>
+            <b>Abridge description:</b> You are given two binary arrays $A$ and $B$, both of size $N$. There are three kinds of operations you can apply on $A$ &mdash;
+            <ul>
+                <li>
+                    Set range $[l, r]$ for any $1 \le l \le r \le N$.
+                </li>
+                <li>
+                    Rest range $[l, r]$ for any $1 \le l \le r \le N$.
+                </li>
+                <li>
+                    Toggle range $[l, r]$ for any $1 \le l \le r \le N$.
+                </li>
+            </ul>
+            Find minimum number of operations needed to $A \rightarrow B$.
+        </p>
+
+        <p>
+            What can we do? Let's investigate the nature of some minimal sequence of operations. Let one of such sequence be $o_1, o_2, \ldots, o_k$ (so $k$ should be the answer, also, denote a operation $o_i = (l_i, r_i, \star_i$)). Now, let's try to understand the impact of one operation on another. Take two operations $o_i$ and $o_j$ ($i < j$). Well... we can barely relate them if $i < j-1$ (when there are some other operations between them). So take some $o_i$ and $o_{i+1}$. Now we may try to fuse them together such that the total number of operations is decreased. But, wait, we picked a minimal sequence right? Yeah, if we can fuse them, that setting isn't possible in a minimal sequence. In this way we can differentiate which settings are possible between two consecutive operations and which settings aren't. There are few cases &mdash;
+            <ul>
+                <li>
+                    $\star_i = \oplus, \star_{i+1} = \oplus$. Most trivial one first. Try drawing all possible ranges, e.g. previous one inside the later one (+ vice-versa), one starts inside another but ends outside etc. If the ranges do not intersect, then we can, to keep things tidy, swap their order if $l_i > l_{i+1}$. From now on, we will try to do this (ordering by $l_i$ and then by $r_i$) whenever possible. If they intersect 
+                </li>
+            </ul>
+        </p>
+    </body>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-146309365-1');
+    </script>
+</html>
