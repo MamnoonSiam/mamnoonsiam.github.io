@@ -1,78 +1,115 @@
-﻿<h1 id="sqrt-decomposition-problems">SQRT Decomposition Problems</h1>
-<h3 id="resources">Resources</h3>
-<ul>
-<li><a href="https://github.com/MamnoonSiam/Files/blob/master/mipt-2016-burunduk1-sqrt.en.pdf">MIPT, Spring Camp 2016</a></li>
-<li><a href="https://github.com/MamnoonSiam/Files/blob/master/mipt-2014-burunduk1.en.pdf">MIPT, Camp 2014</a></li>
-<li><a href="https://acmcairoscience.wordpress.com/2015/04/06/sqrt-decomposition/">ACM Cairo Science</a></li>
-<li><a href="http://blog.anudeep2011.com/mos-algorithm/">Anudeep</a></li>
-<li><a href="http://codeforces.com/blog/entry/43230">Mo’s Algorithm on Trees [Tutorial]</a></li>
-<li><a href="http://e-maxx.ru/algo/sqrt_decomposition">E-maxx</a></li>
-<li><a href="https://rezwanarefin01.github.io/posts/block-decomposition-01/">Block Decomposition (Part - 01) - MO's Algo (le hxr sama's blog)</a></li>
-</ul>
-<h3 id="boring-problems">Boring Problems</h3>
-<ul>
-<li><a href="http://www.spoj.com/problems/DQUERY">DQUERY</a></li>
-<li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4358">Boring counting</a></li>
-<li><a href="http://codeforces.com/problemset/problem/220/B">Little Elephant and Array</a></li>
-<li><a href="http://codeforces.com/problemset/problem/86/D">Powerful Array</a></li>
-</ul>
-<h3 id="implementation">Implementation</h3>
-<p><em><strong>Easy</strong></em></p>
-<ul>
-<li><a href="https://www.hackerearth.com/problem/algorithm/substrings-count-3/">Substrings Count</a></li>
-<li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/sherlock-and-inversions/">Sherlock and Inversions</a></li>
-</ul>
-<p><em><strong>Medium</strong></em></p>
-<ul>
-<li><a href="http://codeforces.com/contest/877/problem/F">Ann and Books</a></li>
-<li><a href="http://codeforces.com/contest/617/problem/E">XOR and Favourite Number</a></li>
-<li><a href="http://www.spoj.com/problems/COT2/">COT2</a></li>
-<li><a href="https://www.codechef.com/problems/CLOSEFAR">So Close Yet So Far</a></li>
-</ul>
-<h3 id="the-stuff">The stuff</h3>
-<ul>
-<li><a href="http://codeforces.com/problemset/problem/121/E">Lucky Array</a> (<a href="http://codeforces.com/contest/121/submission/30626238">Code</a>)</li>
-<li><a href="http://codeforces.com/contest/375/problem/D">Tree and Queries</a> (Can be cancelled out that <em>log n</em>)</li>
-<li><a href="http://codeforces.com/contest/455/problem/D">Sereja and Fun</a></li>
-<li><a href="http://codeforces.com/contest/342/problem/E">Xenia and Tree</a> (Classic <em>query buffering</em>)</li>
-<li><a href="http://codeforces.com/contest/765/problem/F">Souvenir</a> (Author’s solution uses an well knowned technique for handling queries offline, <em>An Important Technique</em>)</li>
-<li><a href="https://csacademy.com/contest/round-54/task/closest-numbers/">Closest Numbers</a></li>
-<li><a href="http://codeforces.com/gym/100589/problem/A">Queries on the Tree</a> (BigSmall and BlockDecomposition <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{O}(n\sqrt{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{O}(n\sqrt{n})" title="\mathcal{O}(n\sqrt{n})"></a>, QueryBuffering <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{O}(n\sqrt{n}\log{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{O}(n\sqrt{n}\log{n})" title="\mathcal{O}(n\sqrt{n}\log{n})"></a>)</li>
-<li><a href="http://codeforces.com/contest/447/problem/E">DZY Loves Fibonacci Numbers</a> (<a href="https://www.codecogs.com/eqnedit.php?latex=f_n&amp;space;=&amp;space;f_{n-1}&amp;space;+&amp;space;f_{n-2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_n&amp;space;=&amp;space;f_{n-1}&amp;space;+&amp;space;f_{n-2}" title="f_n = f_{n-1} + f_{n-2}"></a>)</li>
-<li><a href="http://codeforces.com/contest/13/problem/E">Holes</a></li>
-<li><a href="http://codeforces.com/contest/348/problem/C">Subset Sums</a></li>
-<li><a href="http://codeforces.com/contest/506/problem/D">Mr. Kitayuta’s Colorful Graph</a> (A graph containing <a href="https://www.codecogs.com/eqnedit.php?latex=m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m" title="m"></a> edges have at most <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{O}(\sqrt{m})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{O}(\sqrt{m})" title="\mathcal{O}(\sqrt{m})"></a> nodes having degree greater than <a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt{m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt{m}" title="\sqrt{m}"></a> and so there are at most <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{O}(\sqrt{m}\times\sqrt{m})\Rightarrow&amp;space;\mathcal{O}(m)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{O}(\sqrt{m}\times\sqrt{m})\Rightarrow&amp;space;\mathcal{O}(m)" title="\mathcal{O}(\sqrt{m}\times\sqrt{m})\Rightarrow \mathcal{O}(m)"></a> pairs of node <a href="https://www.codecogs.com/eqnedit.php?latex=(u,&amp;space;v)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(u,&amp;space;v)" title="(u, v)"></a> such that both have a degree greater than <a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt{m}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt{m}" title="\sqrt{m}"></a>.)</li>
-<li><a href="https://www.codechef.com/NOV14/problems/FNCS/">Chef and Churu</a> (<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{O}(q\sqrt{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{O}(q\sqrt{n})" title="\mathcal{O}(q\sqrt{n})"></a>. Needs two sqrt decomposition.)</li>
-<li><a href="http://codeforces.com/contest/896/problem/E">Welcome Home, Chtholy</a></li>
-<li><a href="http://codeforces.com/contest/797/problem/E">Array Queries</a></li>
-<li><a href="">JOI Spring Camp/Qualifying Trial Day-3 Problem-2-Bitaro’s Party</a></li>
-<li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/practice-problems/algorithm/xor-sequence-aad3111f/">Xor Sequence</a></li>
-<li><a href="https://www.hackerearth.com/problem/algorithm/benny-and-sum-2/description/">Benny and Sum</a></li>
-<li><a href="http://codeforces.com/contest/925/problem/E">May Holidays</a></li>
-<li><a href="https://www.hackerrank.com/contests/world-codesprint-13/challenges/dynamic-trees/problem">Dynamic Trees</a></li>
-<li><a href="https://www.hackerrank.com/contests/world-codesprint-13/challenges/competitive-teams/problem">Competitive Teams</a></li>
-<li><a href="https://dmoj.ca/problem/cco18p5">CCO '18 P5 - Boring Lectures</a></li>
-<li><a href="https://oj.uz/problem/view/IOI11_elephants">IOI’11 Dancing Elephants</a></li>
-<li><a href="https://contest.yandex.com/ioi/contest/568/problems/G/">IOI’09 Regions</a></li>
-</ul>
-<h3 id="more-problems">More Problems</h3>
-<ul>
-<li><a href="https://www.codechef.com/problems/GERALD07">Chef and Graph Queries</a></li>
-<li><a href="http://codeforces.com/contest/513/problem/F2">Scaygerboss</a></li>
-<li><a href="http://codeforces.com/contest/849/problem/E">Goodbye Souvenir</a></li>
-<li><a href="http://codeforces.com/contest/444/problem/C">DZY Loves Colours</a></li>
-<li><a href="https://www.codechef.com/MARCH15/problems/MTRWY">Matrix</a></li>
-<li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/practice-problems/algorithm/potential-baac3b0b/description/">Potential</a></li>
-<li><a href="https://www.codechef.com/problems/GERALD3">Chef and Substrings</a></li>
-<li><a href="http://codeforces.com/problemset/problem/351/D">Jeff and Removing Periods</a></li>
-<li><a href="http://codeforces.com/contest/487/problem/D">Conveyor Belts</a></li>
-<li><a href="http://codeforces.com/contest/398/problem/D">Instant Messanger</a></li>
-<li><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1846">GCD 2010</a></li>
-<li><a href="https://www.codechef.com/AUG17/problems/HILLJUMP">Hill Jumping</a></li>
-<li><a href="https://www.codechef.com/LTIME47/problems/CLOSESTQ">Closest Points Queries</a></li>
-<li><a href="https://www.codechef.com/problems/MINXOR">Xor Minimization</a></li>
-<li><a href="http://www.codechef.com/FEB18/problems/CHANOQ">Chef and Odd Queries</a> (Solution: <a href="https://discuss.codechef.com/questions/122105/chanoq-editorial">Online</a>, <a href="https://discuss.codechef.com/questions/122723/chanoq-unofficial-editorial-chef-and-odd-queries-feb-long">Offline</a>)</li>
-<li><a href="https://csacademy.com/contest/rmi-2017-day-2/task/matdiv2/">Mathison and the divisors 2</a></li>
-<li><a href="https://www.codechef.com/problems/SUMCUBE">Sum of Cubes</a> (<a href="https://discuss.codechef.com/questions/108250/sumcube-editorial">Editorial</a>)</li>
-</ul>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQRT Decomposition problems</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  </head>
 
+  <body>
+    <h1 id="sqrt-decomposition-problems">SQRT Decomposition Problems</h1>
+    <h3 id="resources">Resources</h3>
+    <ul>
+      <li><a href="https://github.com/MamnoonSiam/Files/blob/master/mipt-2016-burunduk1-sqrt.en.pdf">MIPT, Spring Camp 2016</a></li>
+      <li><a href="https://github.com/MamnoonSiam/Files/blob/master/mipt-2014-burunduk1.en.pdf">MIPT, Camp 2014</a></li>
+      <li><a href="https://acmcairoscience.wordpress.com/2015/04/06/sqrt-decomposition/">ACM Cairo Science</a></li>
+      <li><a href="http://blog.anudeep2011.com/mos-algorithm/">Anudeep</a></li>
+      <li><a href="http://codeforces.com/blog/entry/43230">Mo’s Algorithm on Trees [Tutorial]</a></li>
+      <li><a href="http://e-maxx.ru/algo/sqrt_decomposition">E-maxx</a></li>
+      <li><a href="https://rezwanarefin01.github.io/posts/block-decomposition-01/">Block Decomposition (Part - 01) - MO's Algo</a></li>
+    </ul>
+    <h3 id="boring-problems">Boring Problems</h3>
+    <ul>
+      <li><a href="http://www.spoj.com/problems/DQUERY">DQUERY</a></li>
+      <li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4358">Boring counting</a></li>
+      <li><a href="http://codeforces.com/problemset/problem/220/B">Little Elephant and Array</a></li>
+      <li><a href="http://codeforces.com/problemset/problem/86/D">Powerful Array</a></li>
+    </ul>
+    <h3 id="implementation">Implementation</h3>
+    <p><em><strong>Easy</strong></em></p>
+    <ul>
+      <li><a href="https://www.hackerearth.com/problem/algorithm/substrings-count-3/">Substrings Count</a></li>
+      <li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/sherlock-and-inversions/">Sherlock and Inversions</a></li>
+    </ul>
+    <p><em><strong>Medium</strong></em></p>
+    <ul>
+      <li><a href="http://codeforces.com/contest/877/problem/F">Ann and Books</a></li>
+      <li><a href="http://codeforces.com/contest/617/problem/E">XOR and Favourite Number</a></li>
+      <li><a href="http://www.spoj.com/problems/COT2/">COT2</a></li>
+      <li><a href="https://www.codechef.com/problems/CLOSEFAR">So Close Yet So Far</a></li>
+    </ul>
+    <h3 id="the-stuff">The stuff</h3>
+    <ul>
+      <li><a href="http://codeforces.com/problemset/problem/121/E">Lucky Array</a> (<a href="http://codeforces.com/contest/121/submission/30626238">Code</a>)</li>
+      <li><a href="http://codeforces.com/contest/375/problem/D">Tree and Queries</a> (Can be cancelled out that <em>log n</em>)</li>
+      <li><a href="http://codeforces.com/contest/455/problem/D">Sereja and Fun</a></li>
+      <li><a href="http://codeforces.com/contest/342/problem/E">Xenia and Tree</a> (Classic <em>query buffering</em>)</li>
+      <li><a href="http://codeforces.com/contest/765/problem/F">Souvenir</a> (Author’s solution uses an well knowned technique for handling queries offline, <em>noice trix</em>)</li>
+      <li><a href="https://csacademy.com/contest/round-54/task/closest-numbers/">Closest Numbers</a></li>
+      <li><a href="http://codeforces.com/gym/100589/problem/A">Queries on the Tree</a> (big-small and split-into-blocks $\mathcal{O}(n\sqrt{n})$, query-buffering $\mathcal{O}(n\sqrt{n}\log{n})$)</li>
+      <li><a href="http://codeforces.com/contest/447/problem/E">DZY Loves Fibonacci Numbers</a> ($f_n = f_{n-1} + f_{n-2}$)</li>
+      <li><a href="http://codeforces.com/contest/13/problem/E">Holes</a></li>
+      <li><a href="http://codeforces.com/contest/348/problem/C">Subset Sums</a></li>
+      <li><a href="http://codeforces.com/contest/506/problem/D">Mr. Kitayuta’s Colorful Graph</a> (A graph with $m$ edges can have at most $\mathcal{O}(\sqrt{m})$ nodes of degree greater than $\sqrt{m}$ $\implies$ there are at most $\mathcal{O}(\sqrt{m}\times\sqrt{m}) = \mathcal{O}(m)$ pairs of nodes $(u,v)$ such that both have degree greater than $\sqrt{m}$.)</li>
+      <li><a href="https://www.codechef.com/NOV14/problems/FNCS/">Chef and Churu</a> ($\mathcal{O}(q\sqrt{n})$. Needs two sqrt decomposition.)</li>
+      <li><a href="http://codeforces.com/contest/896/problem/E">Welcome Home, Chtholy</a></li>
+      <li><a href="http://codeforces.com/contest/797/problem/E">Array Queries</a></li>
+      <li><a href="">JOI Spring Camp/Qualifying Trial Day-3 Problem-2-Bitaro’s Party</a></li>
+      <li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/practice-problems/algorithm/xor-sequence-aad3111f/">Xor Sequence</a></li>
+      <li><a href="https://www.hackerearth.com/problem/algorithm/benny-and-sum-2/description/">Benny and Sum</a></li>
+      <li><a href="http://codeforces.com/contest/925/problem/E">May Holidays</a></li>
+      <li><a href="https://www.hackerrank.com/contests/world-codesprint-13/challenges/dynamic-trees/problem">Dynamic Trees</a></li>
+      <li><a href="https://www.hackerrank.com/contests/world-codesprint-13/challenges/competitive-teams/problem">Competitive Teams</a></li>
+      <li><a href="https://dmoj.ca/problem/cco18p5">CCO '18 P5 - Boring Lectures</a></li>
+      <li><a href="https://oj.uz/problem/view/IOI11_elephants">IOI’11 Dancing Elephants</a></li>
+      <li><a href="https://contest.yandex.com/ioi/contest/568/problems/G/">IOI’09 Regions</a></li>
+      <li><a href="https://official.contest.yandex.ru/opencupXX/contest/18242/problems/K/">K of XX OC - GP of Nanjing</a> <a href="https://drive.google.com/open?id=1BvdtHQ8IrbhRRBM5L7sQsXFXJF9OcCjq">...</a> <a href="https://codeforces.com/blog/entry/76716">cf</a></li>
+    </ul>
+    <h3 id="more-problems">More Problems</h3>
+    <ul>
+      <li><a href="https://www.codechef.com/problems/GERALD07">Chef and Graph Queries</a></li>
+      <li><a href="http://codeforces.com/contest/513/problem/F2">Scaygerboss</a></li>
+      <li><a href="http://codeforces.com/contest/849/problem/E">Goodbye Souvenir</a></li>
+      <li><a href="http://codeforces.com/contest/444/problem/C">DZY Loves Colours</a></li>
+      <li><a href="https://www.codechef.com/MARCH15/problems/MTRWY">Matrix</a></li>
+      <li><a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/practice-problems/algorithm/potential-baac3b0b/description/">Potential</a></li>
+      <li><a href="https://www.codechef.com/problems/GERALD3">Chef and Substrings</a></li>
+      <li><a href="http://codeforces.com/problemset/problem/351/D">Jeff and Removing Periods</a></li>
+      <li><a href="http://codeforces.com/contest/487/problem/D">Conveyor Belts</a></li>
+      <li><a href="http://codeforces.com/contest/398/problem/D">Instant Messanger</a></li>
+      <li><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1846">GCD 2010</a></li>
+      <li><a href="https://www.codechef.com/AUG17/problems/HILLJUMP">Hill Jumping</a></li>
+      <li><a href="https://www.codechef.com/LTIME47/problems/CLOSESTQ">Closest Points Queries</a></li>
+      <li><a href="https://www.codechef.com/problems/MINXOR">Xor Minimization</a></li>
+      <li><a href="http://www.codechef.com/FEB18/problems/CHANOQ">Chef and Odd Queries</a> (Solution: <a href="https://discuss.codechef.com/questions/122105/chanoq-editorial">Online</a>, <a href="https://discuss.codechef.com/questions/122723/chanoq-unofficial-editorial-chef-and-odd-queries-feb-long">Offline</a>)</li>
+      <li><a href="https://csacademy.com/contest/rmi-2017-day-2/task/matdiv2/">Mathison and the divisors 2</a></li>
+      <li><a href="https://www.codechef.com/problems/SUMCUBE">Sum of Cubes</a> (<a href="https://discuss.codechef.com/questions/108250/sumcube-editorial">Editorial</a>)</li>
+    </ul>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+</html>
