@@ -30,8 +30,8 @@
     src: url(../css/fonts/cmu-concrete-bold-italic.ttf);
 }
 body {
-    /*font-family: 'CMU Serif Roman', sans-serif;*/
-    font-family: 'CMU Concrete Roman', sans-serif;
+    font-family: 'CMU Serif Roman', sans-serif;
+    /*font-family: 'CMU Concrete Roman', sans-serif;*/
     /*font-size: 1em;*/
     line-height: 1.5em;
     font-size: 120%;
@@ -46,20 +46,20 @@ p {
     text-justify: inter-word;
 }
 b {
-    /*font-family: 'CMU Serif Bold', sans-serif;*/
-    font-family: 'CMU Concrete Bold', sans-serif;
+    font-family: 'CMU Serif Bold', sans-serif;
+    /*font-family: 'CMU Concrete Bold', sans-serif;*/
 }
 i {
-    /*font-family: 'CMU Serif Italic', sans-serif;*/
-    font-family: 'CMU Concrete Italic', sans-serif;
+    font-family: 'CMU Serif Italic', sans-serif;
+    /*font-family: 'CMU Concrete Italic', sans-serif;*/
 }
 em {
-    /*font-family: 'CMU Serif Bold Italic', sans-serif;*/
-    font-family: 'CMU Concrete Bold Italic', sans-serif;
+    font-family: 'CMU Serif Bold Italic', sans-serif;
+    /*font-family: 'CMU Concrete Bold Italic', sans-serif;*/
 }
 h1, h2, h3, h4, h5, h6 {
-    /*font-family: 'CMU Serif Bold', sans-serif;*/
-    font-family: 'CMU Concrete Bold', sans-serif;
+    font-family: 'CMU Serif Bold', sans-serif;
+    /*font-family: 'CMU Concrete Bold', sans-serif;*/
 }
 a:link { color: #008FFF; text-decoration: none; }
 a:visited { color: #008FFF; text-decoration: none; }
