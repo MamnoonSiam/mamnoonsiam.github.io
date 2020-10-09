@@ -1,3 +1,22 @@
+/*
+JS Script for browser console:
+
+section = document.createElement("section");
+section.id = "allRes";
+document.getElementsByTagName("body")[0].appendChild(section);
+inp = document.getElementById("stClassRoll");
+btn = document.getElementById("btnAllList");
+i = 1201920010001;
+getRes = setInterval(() => {
+    inp.value = i++;
+    btn.click();
+    c = document.getElementById("resultInfo").cloneNode(true);
+    allRes.appendChild(c);
+    if(i > 1201920010666) clearInterval(getRes);
+}, 500);
+*/
+
+
 #include  <bits/stdc++.h>
 using namespace std;
 
