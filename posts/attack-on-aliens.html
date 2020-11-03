@@ -124,8 +124,8 @@
   <h2>All we need to do is...</h2>
   <ul>
     <li>
-      Convince ourselves that the function is convex/concave (just making sure that the sequence of slopes is monotonic) (maybe write up some bruteforce before coding a fast enough solution and submit, see if it works for small subtasks).
-    </li>
+      Convince ourselves that the function is convex/concave (just making sure that the sequence of slopes is monotonic) (maybe write up some bruteforce before coding a fast enough solution and submit, see if it works for small subtasks).<br>
+      P.S. If cost function (weight of directed edge in terms of DAG) satisfies quadrange inequality, dp function will be convex/concave (depending on the quadrange inequality sign). See resources 6 to completely understand what are these.
     <li>
       Being able to solve the <b>$K$-loose version</b> of the main problem in reasonable time and memory complexity.
     </li>
@@ -146,6 +146,7 @@
   </p>
   <p>
     <b>Problem 1:</b> You are given a weighted graph, some of edges are colored in black and others in white. You need to find minimum total weight of a spanning tree which uses esactly $K$ black edges. $|V| \le 10^5, |E| \le 2 \cdot 10^5$.<br>
+    P.S. Assume the graph is connected even when no black edge is used. Otherwise, we get some 'holes' in the function.<br>
     Let $f(k)$ be the ans if $K = k$. Now, $f$ is concave. Binary seach on slope.<br>
     <b>Bonus:</b> Can you prove $f$'s concavity?
   </p>
@@ -159,7 +160,7 @@
     <b>Problem 4:</b> <a href="http://codeforces.com/contest/739/problem/E">Codeforces 739E - Gosha is hunting</a>. (<a href="https://codeforces.com/blog/entry/49691">some discussion</a>)
   </p>
   <p>
-    <b>Problem 5:</b> B of <a href="https://codeforces.com/gym/101981">this</a> contest. This problem needs another idea to solve its $K$-loose version, which is 1D1D dp optimization (you can find resource of that in the next section). Vaguely speaking, consider some dp recurrence: $f_i = \max_{j=0}^{i-1} \left \{ f_j + w_{j,i} \right \}$ and let $g_i = \arg \min_{j=0}^{i-1} \left \{ f_j + w_{j, i} \right \}$. Then the following is true: $$\forall i \le j, w_{i,j} + w_{i+1,j+1} \le w_{i+1,j} + w_{i,j+1} \implies \forall i \le j, g_i \le g_j$$. Monotonicity of $g$ allows us to binary search.
+    <b>Problem 5:</b> B of <a href="https://codeforces.com/gym/101981">this</a> contest. This problem needs another idea to solve its $K$-loose version, which is 1D1D dp optimization (you can find resource of that in the next section). Vaguely speaking, consider some dp recurrence: $f_i = \max_{j=0}^{i-1} \left \{ f_j + w_{j,i} \right \}$ and let $g_i = \arg \min_{j=0}^{i-1} \left \{ f_j + w_{j, i} \right \}$. Then the following is true: $$\forall i \le j, w_{i,j} + w_{i+1,j+1} \le w_{i+1,j} + w_{i,j+1} \implies \forall i \le j, g_i \le g_j$$. Monotonicity of $g$ allows us to binary search (P.S. w/ some noise though).
   </p>
   <p>
     You can find 2 and 3's editorial in the internet. 1 is from some chinese team selection test.
@@ -181,6 +182,10 @@
     </li>
     <li>
       <a href="https://wcipeg.com/wiki/Convex_hull_trick">Convex Hull Trick - PEGWiki</a>
+    </li>
+    P.S.<br>
+    <li>
+      See <a href="http://www.cs.ust.hk/mjg_lib/bibs/DPSu/DPSu.Files/sdarticle_204.pdf">this</a> for rigorous proofs.
     </li>
   </ul>
 
