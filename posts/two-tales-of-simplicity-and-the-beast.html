@@ -111,13 +111,13 @@
       Intuitively, transition from $dp[i][j]$ to some $dp[.][.]$ will be performed by covering some suffix of $[1;j]$ by the $i$-th interval. At this point, I was almost sure that this was how it would go. So it makes sense that we sort the intervals by their end points. Visually $(i-1)$-th interval is to the left of the $i$-th one, so we should cover some suffix, then tell $i-1$ to cover some suffix, then $i-1$ tells $i-2$...
     </p>
     <p>
-      So what it's going to look like on the big O notations, there are $\mathcal{O}(nm)$ states, each state will probably have $\mathcal{O}(m)$ transitions, and overall $\mathcal{O}(nm^2)$. Ha! You can already smell some data structure to optimize this, right? Because it will look something like minimum of all $dp[i-1][k-1] + (x_i - s_i) - k$. What? Linear function of $k$? Not gonna lie, at this point I was like, "Ooo boi, this getting spicy, ngl. Will this end up being a CHT problem? Oooo shiett, time for some big brain moves over noob Farhan *drools and slurps*...". This whole sequence is like you playing Minecraft survival in some server and you are so bored with the normal survival that you go to raid bastion remnants for gold block even though you have a giant ass gold farm and you end up dying to the biglin brutes and lose all your max enchanted netherite gears.
+      So what it's going to look like on the big O notations, there are $\mathcal{O}(nm)$ states, each state will probably have $\mathcal{O}(m)$ transitions, and overall $\mathcal{O}(nm^2)$. Ha! You can already smell some data structure to optimize this, right? Because it will look something like minimum of all $dp[i-1][k-1] + (x_i - s_i) - k$. What? Linear function of $k$? Not gonna lie, at this point I was like, "Ooo boi, this getting spicy, ngl. Will this end up being a CHT problem? Oooo shiett, time for some big brain moves over noob Farhan *drools and slurps*...". This whole sequence is like you playing Minecraft survival in some server and you are so bored with the normal survival that you go to raid bastion remnants for gold block even though you have a giant ass gold farm and you end up dying to the piglin brutes and lose all your max enchanted netherite gears.
     </p>
     <p>
       The humane words of the transitions are, initially $i$-th interval's left end point is at $x_i - s_i$ and you will extend that upto $k \, (k \le x_i - s_i)$. Also, there's the option to completely ignore the $i$-th interval and just go to $dp[i-1][j]$.
     </p>
     <p>
-      Anyway, back to the the part where we could smell some ds optimization. Probably after a minute of daydreaming, I realized that we just need to precalc the min prefix array of $dp[i-1][k] - k$, because $\min \left \{ dp[i-1] + (x_i - s_i) - k \right \}$ $=$ $(x_i - s_i) + \min \left \{ dp[i-1][k] - k \right \} $.
+      Anyway, back to the the part where we could smell some ds optimization. Probably after a minute of daydreaming, I realized that we just needed to precalc the min prefix array of $dp[i-1][k] - k$, because $\min \left \{ dp[i-1] + (x_i - s_i) - k \right \}$ $=$ $(x_i - s_i) + \min \left \{ dp[i-1][k] - k \right \} $.
     </p>
     <p>
       So I was coding this idea. Also, I realised that we don't need to explicitly delete the irrelevant intervals, sorting by the right end point works fine, so, I deleted that part of the code, had taken me quite a few minutes to do that part. Meanwhile I thought I would go check out the status page to know if he had solved it or not. Here comes the second bruh moment. He was chillin after he had ACed it in 12 minutes.
@@ -145,6 +145,9 @@
 
     <p>
       There you have the simplicity and elegance of those two problems and the beast of Farhan Ahmad (and how I managed to screw things up). That's all for today. Thanks for reading :D
+    </p>
+    <p>
+      <small>*sorry for the grammar and spelling mistakes</small> 
     </p>
 
   </body>
