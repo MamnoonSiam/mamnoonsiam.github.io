@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Two Tales of Simplicity and The Beast</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <a href="https://mamnoonsiam.github.io">homepage</a>
+    <h1>Two Tales of Simplicity and The Beast</h1>
+    <h4><i>February 2, 2021</i></h4>
+    <p>
+      Yesterday I was dueling against Farhan Ahmad in AC discord server.
+      I lost in two matches which posed two slick yet simple problems.
+      In this post, I will try to write up few ideas for those problems.
+    </p>
+    <h3>Problem 1: <a href="https://codeforces.com/contest/549/problem/G">G. Happy Line</a></h3>
+    <p>
+      You are given an array $a$ of length $n \, (1 \le n \le 10^5)$. $a_i \, (0 \le a_i \le 10^9)$ denotes the number of balls in the $i$-th stack (well, that's how you introduce stacks of balls). Let's define an operation &ndash; you are allowed to do the following processes in that specific order:
+      <ol>
+        <li>
+          Select some $i \, (1 \le i < n)$ such that there's at least one ball in the $i$-th stack (i.e. $a_i > 0$).
+        </li>
+        <li>
+          Take one ball from $i$-th stack and put that in the $(i+1)$-th stack.
+        </li>
+        <li>
+          Swap the position of pile $i$ and pile $i+1$.
+        </li>
+      </ol>
+      In other words, if $a^\prime$ is the array after applying an <i>operation</i>, then, $a^\prime_i = a_{i+1} + 1$ and $a^\prime_{i+1} = a_i - 1$. Your goal is to make $a$ non-decreasing. Can you do it? If yes, then print one possible final array.
+    </p>
+    <p>
+      The moment I finished reading the statement, I was quite sure that I should look for some sort of invarience/monovariance. Well, that's because of, one can say, a rule of thumb. There's usually invariance or monovariance involved in these kind of setups &ndash; be it relevant or not. Indeed there was.
+    </p>
+    <p>
+      If you think for a moment, we cannot make an invariant function of $i$ &ndash; the index because we are swapping the stacks themselves and everything will go haywire. That being said, it would be smart to shift your focus. Imagine it like this &ndash; we won't explicitly arrange the stacks in a line, one after another, rather we will leave them scattered. Instead, we will put a sticker on each of them which will denote the index they should belong to. Now, our operation looks something like this &ndash; choose some non-empty stack, look at it's sticker, say $i$ is written on it, find the stack with sticker $i+1$, take a potato from the $i$-th stack and put that in the $(i+1)$-th, and finally swap the stickers.
+    </p>
+    <p>
+      Now it's somewhat easier to see, but more importantly &ndash; <i>feel</i> the invariance. One of the stack loses a potato but gains one in the index written on the sticker, and the other stack gains a potato but loses one from the sticker. That's it! (number of potatoes in the bag) + (what's written on the sticker) is constant (from now on, for some stack $u$, we will denote this value with $u_\text{const}$, sorry for giving off the OOP vibes). Here comes the bruh moment. Farhan had ACed the problem way (if not waayyyyy) before I was done modeling the problem as above and found some observations. Come on, I hadn't even started coding anything.
+    </p>
+    <p>
+      After a short, anticlimactic defeat there was me and my apparently pointless observations. Pointless in the sense that, now what? 
+    </p>
+    <p>
+      Let's get back to the ideas again. What we really need to do? we need to make sure that, after all the potato exchange and sticker flippin, this condition is met &ndash; for every two stack $u$ and $v$, if $u_\text{sticker} < v_\text{sticker}$ then $u_{\text{potatoes}} \le v_{\text{potatoes}}$. One more thing, just to bring that in the active part of our brain, at any point in time, all stacks have distinct values in their <i>sticker</i> attribute. I will denote the final value of the attributes by writing the attribute name in capslock, e.g. $u_\text{STICKER}$. 
+    </p>
+    <p>
+      $u_\text{POTATOES} = u_\text{const} - u_\text{STICKER}$. Imagine you are in the final configuration. You arrange the stacks from left to right in increasing order of $u_\text{STICKER}$. You want to see $u_\text{POTATOES}$ not decrease too, as you go from left to right. But if you think about it, because you are subtracting $u_\text{STICKER}$, which is increasing, $u_\text{POTATOES}$ will have a tendency to decrease. Unless... unless $u_\text{const}$ is also kinda increasing, going left to right. Yeah, that's it. Sort the stacks by their $\text{const}$ values &ndash; the best thing you can do. Obviously, if some $u_\text{POTATOES}$ is negative or the sequence of $u_\text{POTATOES}$ is not non-decreasing, you will print no.
+    </p>
+    <p>
+      So, now that you know what goes where, how do you know if you can actually obtain that ordering without violating the "stack with lesser $\text{sticker}$ value needs to be non-empty" condition? Turns out that you can, if the two conditions of the last paragraph are fulfilled. How do we prove that there's at least one way of achieving that? The proof is easy, but not too straightforward, at least to me. Maybe that's just me, I particularly suck at problems like these, sorty sorty intuitions don't come to me naturally. This might be the reason I failed to solve the "Shoes" problem in IOI 2019 day 1.
+    </p>
+    <p>
+      The theme is that, at any moment, we will make sure that, for some stack $u$, $u_\text{potatoes}$ does not go below $\min(u_\text{potatoes}, u_\text{POTATOES})$. Take the stack with maximum $\text{const}$ value (call that $u$), and put that in the $n$-th position. In this process, $u$'s $\text{potatoes}$ value gets finalized (which is non negative) &ndash; decreasing by one each time and other stacks' $\text{potatoes}$ values remain same or increase by one. After that, bring the second max value to the $(n-1)$-th position...
+    </p>
+    <p>
+      There's another way of thinking without "reshaping" the process. You read the statement. You think, "Okay, we have to rearrange bunch of stuff, I'll give the classic a go and think of the final position of an object and how things will change if we fix some final permutation." Let's say that $i$-th stack will end up at $p_i$. Now if $a^\prime$ is our final array, then $a^\prime_{p_i} = a_i + i - p_i$. So basically we can think of $a_i+i$ as a whole entity. I'll draw out the large scheme by plugging in the $p_i$ values,
+      <center>$a^\prime_1 = \fbox{$\,\,\,\,\,\,\,\,\,\,$} - 1$</center>
+      <center>$a^\prime_2 = \fbox{$\,\,\,\,\,\,\,\,\,\,$} - 2$</center>
+      <center>$a^\prime_3 = \fbox{$\,\,\,\,\,\,\,\,\,\,$} - 3$</center>
+      <center>$\vdots$</center>
+      <center>$a^\prime_n = \fbox{$\,\,\,\,\,\,\,\,\,\,$} - n$</center>
+      And our job is to rearrange the $a_i + i$ entities in those $n$ blank boxes so that the left hand side is sorted, when read from top to bottom. Now it makes more sense that some blank higher than some other blank should recieve lesser $(a_i+i)$-value.
+    </p>
+    <p>
+      Now that I think of it, although both of the thought processes just paraphrases the same thing, later one is much more cleaner the former one.
+    </p>
+    <p>
+      But hold on, hold on. Owning all of these, here comes the final blow- the holy grail of visualization and serenity. This one's from the official editorial itself.
+    </p>
+    <center>
+      <img src="../img/a-tale-of-simplicity-and-the-beast/operation.gif" alt="Operation equivalence animation.">
+    </center>
+    <p>
+      Make a bar diagram, $i$-th bar from left is $a_i$ units tall. Also, imagine a staircase begin superimposed on the diagram &ndash; the $i$-th stair from the left is $n-i+1$ units tall. Now the operation becomes, just swapping whatever is above the stairs of two adjacent bars, stairs are stationary. Your task is to rearrange the blocks above the stairs in such a way that altogether the whole shape is non-decreasing. No shit one should just sort the yellow blocks! Hmmph, notorious coincidence. $i$-th yellow block is $a_i - (n-i+1)$ units in height. As $n+1$ is constant, saying "sort by $a_i-(n-i+1)$" is the same as saying "sort by $a_i+i$". PeepoClap.
+    </p>
+    <p>
+      Before moving to the next problem, I just want to say that the reason why I tried to remodel the problem in the "sack of potatoes and stickers on them" way is motivated from one of the finest IOI problems&ndash; <a href="https://oj.uz/problem/view/IOI15_sorting">Sorting</a>. Pls check out this problem if you haven't already. You will enjoy your time.
+    </p>
+    <h3>Problem 2: <a href="https://codeforces.com/contest/1253/problem/E">E. Antenna Converage</a></h3>
+    <p>
+      On a street similar to $Ox$ axis, there are $n \, (1 \le n \le 80)$ antennas, numbered from $1$ to $n$. The $i$-th antenna lies on the position $x_i$ and has an initial scope of $s_i$: it covers all integer positions inside the interval $[x_i−s_i;x_i+s_i]$. It is possible to increment the scope of any antenna by $1$, this operation costs $1$ coin. We can do this operation as much as we want (multiple times on the same antenna if we want). Our goal is to make all integer positions from $1$ to $m \, (n \le m \le 10^5)$, inclusive, covered by at least one antenna. Note that it is authorized to cover positions outside $[1;m]$, even if it's not required. What is the minimum amount of coins needed to achieve this modernization?
+    </p>
+    <p>
+      Well, obviously this is a dynamic programming problem. Poor guy's first instinct: $dp[i][j] =$ solution to cover $[1;j]$ using first $i$ intervals (antennas). But the order in which we process the intervals is important, we have to do something about that.
+      <ul>
+        <li>
+          We don't need some interval which is completely inside another, we will never invest on that, discard that. From now on we will assume that, input has no interval-on-interval (kekw) scenerio. In the CPlore, it's implication is quite mainstream&ndash; if we sort them in the increasing order of their start point, the end points will also be sorted.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Intuitively, transition from $dp[i][j]$ to some $dp[.][.]$ will be performed by covering some suffix of $[1;j]$ by the $i$-th interval. At this point, I was almost sure that this was how it would go. So it makes sense that we sort the intervals by their end points. Visually $(i-1)$-th interval is to the left of the $i$-th one, so we should cover some suffix, then tell $i-1$ to cover some suffix, then $i-1$ tells $i-2$...
+    </p>
+    <p>
+      So what it's going to look like on the big O notations, there are $\mathcal{O}(nm)$ states, each state will probably have $\mathcal{O}(m)$ transitions, and overall $\mathcal{O}(nm^2)$. Ha! You can already smell some data structure to optimize this, right? Because it will look something like minimum of all $dp[i-1][k-1] + (x_i - s_i) - k$. What? Linear function of $k$? Not gonna lie, at this point I was like, "Ooo boi, this getting spicy, ngl. Will this end up being a CHT problem? Oooo shiett, time for some big brain moves over noob Farhan *drools and slurps*...". This whole sequence is like you playing Minecraft survival in some server and you are so bored with the normal survival that you go to raid bastion remnants for gold block even though you have a giant ass gold farm and you end up dying to the biglin brutes and lose all your max enchanted netherite gears.
+    </p>
+    <p>
+      The humane words of the transitions are, initially $i$-th interval's left end point is at $x_i - s_i$ and you will extend that upto $k \, (k \le x_i - s_i)$. Also, there's the option to completely ignore the $i$-th interval and just go to $dp[i-1][j]$.
+    </p>
+    <p>
+      Anyway, back to the the part where we could smell some ds optimization. Probably after a minute of daydreaming, I realized that we just need to precalc the min prefix array of $dp[i-1][k] - k$, because $\min \left \{ dp[i-1] + (x_i - s_i) - k \right \}$ $=$ $(x_i - s_i) + \min \left \{ dp[i-1][k] - k \right \} $.
+    </p>
+    <p>
+      So I was coding this idea. Also, I realised that we don't need to explicitly delete the irrelevant intervals, sorting by the right end point works fine, so, I deleted that part of the code, had taken me quite a few minutes to do that part. Meanwhile I thought I would go check out the status page to know if he had solved it or not. Here comes the second bruh moment. He was chillin after he had ACed it in 12 minutes.
+    </p>
+    <p>
+      What the fuss? So, here's his solution&ndash; elegant, cute and simple: $dp[i]$ = min cost to cover $[1;i]$. No need to keep track of the intervals, it will only worsen the solution if you use some interval twice, so some optimal calculation will use every interval only once. Because $dp[i]$ is being asked to cover $[1;i]$, it can <i>assume</i> that $[i+1;m]$ is already covered. Now the wording sounds something like this- you will try to <i>use</i> some interval (you will iterate over them), to cover some suffix of $[1;i]$. Okay, you will do $\mathcal{O}(n)$ iterations. But then again, like the previous approach, you may want to iterate over how much you want to expand some particular interval to cover a suffix, which leads to the same old shitty complexity (both- idea and time). Here's the smart move- don't iterate over how much you want to expand, that- you can decide later. Well, if you think about it, there was an italic assumption in the beginning of this paragraph. Use that and extend the already-trailing interval by one, that is, $dp[i] \,\, \texttt{min=} \,\, dp[i-1] + 1$. All we need to do is while iterating over the intervals, deciding which one to use to cover the suffix, extend it only upto such a point that it actually covers some suffix.
+    </p>
+    <p>
+      For each interval $[l_j, r_j]$,
+      <ul>
+        <li>
+          If $l_j > i$, ignore that.
+        </li>
+        <li>
+          If $l_j \le i$ and $r_j \ge i$, do $dp[i] \,\, \texttt{min=} \,\, dp[l_j-1]$.
+        </li>
+        <li>
+          Otherwise, $dp[i] \,\, \texttt{min=} \,\, dp[l_j - (i - r_j) - 1] + (i - r_j)$.
+        </li>
+      </ul>
+    </p>
+    <p>
+      One application of why poeple don't generally iterate on how many times they want to take a coin in the 0/inf-coin change problem.
+    </p>
+
+    <p>
+      There you have the simplicity and elegance of those two problems and the beast of Farhan Ahmad (and how I managed to screw things up). That's all for today. Thanks for reading :D
+    </p>
+
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>

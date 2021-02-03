@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Irony of &#128301 ing</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <a href="https://mamnoonsiam.github.io">homepage</a>
+    <h1>Irony of &#128301 ing</h1>
+    <h4><i>January 19, 2021</i></h4>
+
+    <p>
+      Let's say you are given a array of numbers and are asked to calculate: $$\max_{1 \le i, j \le n} a_i - a_j$$. What do you do?
+    </p>
+
+    <p>
+      Obviously this: $$\max_{i=1}^{n} a_i - \min_{i=1}^{n} a_i$$. Telescoping! We all love that.
+    </p>
+
+    <p>
+      But if you are asked to calculate the later one, what are the chances that the first expression would peep in your prepheral vision?
+    </p>
+
+    <h3>A Shortest Path Problem</h3>
+    <p>
+      You are given a weighted undirected connected graph consisting of $n$ ($2 \le n \le 2 \cdot 10^5$) vertices and $m$ ($1\le m \le 2 \cdot 10^5$) edges. No self-loops, no multi-edges. Let's define the weight of the path consisting of $k$ edges with indices $e_1, e_2, \ldots, e_k$ as $\sum_{i=1}^{k} w_{e_i} - \max_{i=1}^{k} w_{e_i} + \min_{i=1}^{k} w_{e_i}$, where $w_i$ &mdash; weight of the $i$-th edge in the graph. Find the minimum weight of a path from the $1$-st vertex to the $i$-th vertex for each $i$ $(2 \le i \le n)$.
+    </p>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>
