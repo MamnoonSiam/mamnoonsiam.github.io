@@ -35,11 +35,14 @@ body {
     /*font-size: 1em;*/
     line-height: 1.5em;
     font-size: 120%;
+
     /*margin: 10em;*/
     /*margin-top: 3em;
     margin-bottom: 3em;
     margin-left: 10em;
     margin-right: 10em;*/
+    max-width: 60em; margin: auto;
+    margin-bottom: 2em;
 }
 p {
     text-align: justify;
