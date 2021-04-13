@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 10 | Trie (and binary trie)</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <h1>Week 10 | Trie (and binary trie)</h1>
+    <h4><i>13 April, 2021</i></h4>
+
+    <h2>What was discussed?</h2>
+    <p>
+      <ul>
+        <li>
+          You are given $n$ strings $P_1, P_2, \ldots, P_n$ beforehand. You
+          have to answer $q$ queries: given a string $Q_i$, determine if it
+          is in $P$.
+          <dl>
+            <dd>- Sort $P$. Binary search in each query. But we can do
+              better.</dd>
+            <dd>- How to solve this using trie.</dd>
+          </dl>
+        </li>
+        <li>
+          G of ICPC Regional 2021 Preliminary Contest. Big-small square root
+          decomposition.
+        </li>
+        <li>
+          Given a list of numbers, find minimum xor of two pairs of different
+          elements.
+          <dl>
+            <dd>- Sort the list, take $\min_{i=1}^{n-1} a_i \oplus
+              a_{i+1}$.</dd>
+          </dl>
+        </li>
+        <li>
+          You have to maintain a multiset $S$, which is empty initially.
+          There are $Q$ updates and queries:
+          <dl>
+            <dd>- Update: $\texttt{+ } x$, add $x$ to $S$.</dd>
+            <dd>- Query: $\texttt{? } x$, calculate $\max_{y \in S} x \oplus
+              y$.</dd>
+          </dl>
+        </li>
+      </ul>
+    </p>
+    <h2>Recording</h2>
+    <p>
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/qMztNwDCVMU">
+      </iframe>
+    </p>
+    <h2>Practice Problems</h2>
+    <ol>
+      <li>
+        <a href="https://www.codechef.com/MAY17/problems/WSITES01">Codechef - Blocked websites</a>
+      </li>
+      <li>
+        <a href="https://wcipeg.com/problem/ioi0811">IOI '08 - Type Printer</a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/problemset/problem/455/B">455B - A Lot of Games</a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/problemset/problem/706/D">706D - Vasiliy's Multiset</a>
+      </li>
+      <li>
+        <a href="https://www.codechef.com/MAY17/problems/GPD">Codechef - Gotham PD</a>
+      </li>
+      <li>
+        <a href="https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635/0000000000104e05">Google Code Jam Round 1A 2019 - Alien Rhyme</a>
+      </li>
+    </ol>
+    <h2>References</h2>
+    <ul>
+      <li>
+        <a href="http://www.shafaetsplanet.com/?p=1679">ট্রাই(প্রিফিক্স ট্রি/রেডিক্স ট্রি) - Shafaet Ashraf</a>
+      </li>
+      <li>
+        <a href="https://threadsiiithyderabad.quora.com/Tutorial-on-Trie-and-example-problems">Tutorial on Trie and example problems - Lalit Kundu</a>
+      </li>
+    </ul>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>
