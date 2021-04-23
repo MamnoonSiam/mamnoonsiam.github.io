@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 5 | Basics of Graph Theory</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <h1>Week 5 | Basics of Graph Theory</h1>
+    <h4><i>24 April, 2021</i></h4>
+
+    <h2>What was discussed?</h2>
+    <p>
+      This class was on basic stuff of graph theory- the stuff you should go through after learning bfs/dfs/graph representations.
+      You can find the pdf in this <a href="./note.pdf">link</a>.
+    </p>
+    <h2>Recording</h2>
+    <p>
+      Unfortunately, zoom recordings were somewhat corrupted, so I couldn't merge them. I uploaded the partial clips in <a href="https://drive.google.com/drive/folders/18rjQzt5C8UZo-p_xqLLbL9M0vDrAsKrT">this</a> gdrive folder.
+    </p>
+    <h2>Bonus</h2>
+    <ul>
+      <li>
+        <a href="https://codeforces.com/contest/1470/problem/D">1470D - Strange Housing</a>: You are given a graph with $N$ nodes and $M$ edges. Color each node in black/white, such that if two nodes are adjacent, then both of them cannot be black, and if you consider only the edges that have black node at one of its endpoint, the graph still remains connected, or say it's impossible. $2 \le N \le 3\cdot 10^5, 0 \le M \le 3\cdot 10^5$.
+      </li>
+    </ul>
+    <h2>References</h2>
+    <ul>
+      <li>
+        <a href="http://web.mit.edu/yufeiz/www/imo2008/tang-graph.pdf">IMO Training 2008: Graph Theory, Adrian Tang</a>
+      </li>
+      <li>
+        <a href="https://sites.google.com/site/imocanada/2014-winter-camp/Graph%20Theory%20-%20Matthew%20Brennan%20-%202014%20winter%20camp.pdf?attredirects=0">Graph Theory, Matthew Brennan, Canada IMO Training 2014 winter camp</a>
+      </li>
+      <li>
+        <a href="https://sites.google.com/site/imocanada/system/app/pages/search?scope=search-site&q=graph+theory">I might as well just...</a>
+      </li>
+    </ul>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>

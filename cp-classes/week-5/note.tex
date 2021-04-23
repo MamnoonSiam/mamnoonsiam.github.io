@@ -1,0 +1,97 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{/run/media/mamnoonsiam/Programming/GitLab/general-writings/style}
+
+\title{Graph Theory, Class 1}
+\author{Mamnoon Siam}
+\date{\today}
+
+\begin{document}
+  \maketitle
+  \section{Definitions and Notations}
+  \begin{definition}[Degree]
+    Given a vertex $v$, the \textbf{degree} of $v$ is defined to be the
+    number of edges containing $v$ as an endpoint.
+  \end{definition}
+  \begin{definition}[Complement Graph]
+    Let $G=(V, E)$ be a graph. The \textbf{complement} $\bar{G}$ of $G$ is a
+    graph with the same vertex set as $G$ and $E(\bar{G})=\{e \notin E(G)\}$.
+    i.e. $\bar{G}$ has edges exactly where there are no edges in $G$.
+  \end{definition}
+  \begin{definition}
+    Let $G$ be a connected graph. Then $G$ contains a subgraph which is a
+    tree containing all the vertices of $G$. Such a subgraph is called
+    \textbf{spanning tree} of $G$.
+  \end{definition}
+  \begin{itemize}
+    \item Sometimes its easier to solve some problem if you consider some
+      spanning tree of the given graph because trees are easier to deal with.
+    \item Some of the most occurred spanning trees are dfs and bfs trees
+      (both have theirs own perks).
+  \end{itemize}
+  \begin{definition}[Tournament Graphs]
+    A directed graph $G(V, E)$ is called tournament \textit{iff} for every
+    pair $(a,b) \, | \, 1 \le a < b \le |V|$, there exists either a directed
+    edge from $a$ to $b$ or a directed edge from $b$ to $a$. In other words,
+    A tournament is defined to be a complete directed graph.
+  \end{definition}
+  \begin{definition}[Hamiltonian Path]
+    A path that visits every vertex \textbf{exactly} once.
+  \end{definition}
+  \begin{definition}[Hamiltonian Cycle]
+    A Cycle that visits every vertex \textbf{exactly} once.
+  \end{definition}
+  \section{Notations}
+  \begin{enumerate}
+    \item Maximum degree of any node in graph $G$ is denoted with $\Delta(G)$.
+  \end{enumerate}
+  \section{Problems}
+  \subsection{Basic Stuff}
+  \begin{problem}
+    \label{degree-sum}
+    Let $G$ be a graph with $n$ vertices, $m$ edges and the degrees of the
+    $n$ vertices are $d_{1}, d_{2}, \cdots, d_{n}$ Prove that
+    \[
+      \sum_{i=1}^{n} d_{i}=2 m
+    .\]
+  \end{problem}
+  \begin{problem}
+    Let $G$ be a disconnected graph. Prove that its complement $\bar{G}$ is
+    connected.
+  \end{problem}
+  \begin{problem}
+    Prove that a graph is bipartite if and only if it does not contain an odd
+    cycle.
+  \end{problem}
+  \begin{problem}
+    Characterize graphs with $n$ vertices and $n$ edges (connected or
+    disconnected).
+  \end{problem}
+  \begin{problem}
+    Characterize graphs with $\Delta(G) \le 2$.
+  \end{problem}
+
+  \subsection{Induction}
+  \begin{problem}
+    Given an undirected connected graph $G(V, E)$, find a subset $S$ of $E$,
+    such that in the graph $G^\prime(V, S)$, every node has odd degree. Also,
+    find a condition necessary and sufficient condition for this subset to
+    exist.
+  \end{problem}
+  \begin{problem}
+    Prove that every tournament graph has a Hamiltonian path.
+  \end{problem}
+  \begin{problem}[\href{https://codeforces.com/problemset/problem/%
+    1019/C}{Sergey's Problem}]
+    Prove that, for every directed graph $G(V, E)$ without self-loop, there
+    exists $Q \subseteq V$, such that there is no directed edge between two
+    vertices from $Q$ and every vertex not belonging to $Q$ can be reached
+    from a vertex $\in Q$ in at most two moves.
+  \end{problem}
+
+  \subsection{Coloring}
+  \begin{problem}
+    For a $n \times m$ grid, find necessary and sufficient condition for is
+    to have a Hamiltonian Cycle. (you can move from one cell to another
+    \textit{iff} they share a side)
+  \end{problem}
+\end{document}
