@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 11 | Range Updates and Range Maximums</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <h1>Week 11 | Range Updates and Range Maximums</h1>
+    <h4><i>27 April, 2021</i></h4>
+
+    <h2>What was discussed?</h2>
+    <p>
+      <ol>
+        <li>
+          <a href="https://cses.fi/problemset/task/1652">
+            Forest Queries
+          </a>: subgrid sum queries.
+        </li>
+        <li>
+          <a href="https://cses.fi/problemset/task/1144">
+            Salary Queries
+          </a>: how to use ordered sets.
+        </li>
+        <li>
+          <a href="https://cses.fi/problemset/task/2206">
+            Pizzeria Queries
+          </a>: dealing with absolute values in ds problems.
+          <br>
+          &nbsp; &nbsp; Prerequisite: <a href="https://cses.fi/problemset/task/1649">Dynamic Range Minimum Queries</a>
+        </li>
+        <li>
+          Problem: Maintain a data structure which supports the following
+          updates and querys on an array $A$ (initially all $A[i]$ are $0$)-
+          <ul>
+            <li>$\texttt{update}(l, r, x)$: do $A[i] := A[i] + x$ for all $i \in [l, r]$.</li>
+            <li>$\texttt{query}(l, r)$: find $\max_{i=l}^{r} A[i]$.</li>
+          </ul>
+          Solution using square root decomposition and segment tree with lazy propagation.
+        </li>
+      </ol>
+    </p>
+    <h2>Recording</h2>
+    <p>
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/BZsmx9lZMGY" allowfullscreen>
+      </iframe>
+    </p>
+    <h2>References</h2>
+    <ul>
+      <li>
+        <a href="https://cp-algorithms.com/data_structures/segment_tree.html#toc-tgt-10">cp-algorithms</a>
+      </li>
+      <li>
+        Another recommended playlist for segment trees: <a href="https://lightoj.com/problems/category/segment-tree">LightOJ</a>
+      </li>
+    </ul>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>
