@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 13 | A Custom Pset for Beginners & Solutions (COCI)</title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+    <h1>Week 13 | A Custom Pset for Beginners & Solutions (COCI)</h1>
+    <h4><i>2 July, 2021</i></h4>
+
+    <h2>What was discussed?</h2>
+    <p>
+      People triend to solve the following problems for ~3:30 hours, and then we discussed the solutions.
+    </p>
+    <p>
+      <img src="./what-kinda-ranking-is-this.png">
+    </p>
+    <p>
+      <a href="https://evaluator.hsin.hr/tasks/HONI192053emacs/">A - Emacs:</a> Just count the following configuation in the whole grid ;)
+      <center><code>
+        ..<br>
+        .#
+      </code></center>
+    </p>
+    <p>
+      <a href="https://evaluator.hsin.hr/tasks/HONI192043psk/">B - PSK:</a> Sort the glasses by their volumes, keep filling the largest glasses, and rest of the glasses are empty.
+    </p>
+    <p>
+      <a href="https://evaluator.hsin.hr/tasks/HONI192044spiderman/">C - Spiderman:</a> Just modify sieve.
+    </p>
+    <p>
+      <a href="https://evaluator.hsin.hr/tasks/HONI192064birmingham/">D - Birmingham:</a> Mainly this problems asks you to find multi-source shortest paths. We can convert MSSP to SSSP by adding a dummy node and adding dummy edges of equal weight between the new dummy node and the given source nodes, and finally making the dummy node our new single source.
+    </p>
+    <p>
+      <a href="https://evaluator.hsin.hr/tasks/HONI192056putovanje/">E - Putovanje:</a> Given tree, and $m$ updates: $\texttt{update}(u, v, x)$: do $\texttt{+}x$ to all the edges on $uv$ path. Find the final value of each edge.
+    </p>
+    <p>
+      Split each update in two: from $u$ to lca and from $v$ to lca. Now every $uv$ are in ancestor-decendant relationship. The trick is maintain another value $s_u$ for each node $u$, which is 0 initially. Then for each update (v is decendant, u is ancestor) do $s_v \texttt{+=} x$ and $s_u \texttt{-=} x$. Finally, value of an edge $ab$ ($a$ is parent) is $\sum_{u \in \text{subtree of b}} s_u$. ;) To learn more about these tricks read the tree chapters of cses.fi/book.pdf.
+    </p>
+    <h2>Recording</h2>
+    <p>
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/0_C04DzSIDU" allowfullscreen>
+      </iframe>
+    </p>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>
