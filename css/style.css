@@ -41,12 +41,16 @@ body {
     margin-bottom: 3em;
     margin-left: 10em;
     margin-right: 10em;*/
-    max-width: 60em; margin: auto;
+    /*max-width: 60em;*/
+    max-width: 60ch;
+    margin: auto;
     margin-bottom: 2em;
 }
 p {
     text-align: justify;
     text-justify: inter-word;
+    font-size: 17px;
+    line-height: 1.4rem;
 }
 b {
     /*font-family: 'CMU Serif Bold', sans-serif;*/
@@ -63,6 +67,9 @@ em {
 h1, h2, h3, h4, h5, h6 {
     /*font-family: 'CMU Serif Bold', sans-serif;*/
     /*font-family: 'CMU Concrete Bold', sans-serif;*/
+}
+body img {
+   width: 100%;
 }
 /*a:link { color: #008FFF; text-decoration: none; }
 a:visited { color: #008FFF; text-decoration: none; }
