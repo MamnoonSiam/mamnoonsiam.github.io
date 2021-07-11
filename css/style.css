@@ -32,25 +32,18 @@
 body {
     /*font-family: 'CMU Serif Roman', sans-serif;*/
     /*font-family: 'CMU Concrete Roman', sans-serif;*/
-    /*font-size: 1em;*/
-    line-height: 1.5em;
-    font-size: 120%;
-
-    /*margin: 10em;*/
-    /*margin-top: 3em;
-    margin-bottom: 3em;
-    margin-left: 10em;
-    margin-right: 10em;*/
-    /*max-width: 60em;*/
-    max-width: 60ch;
+    /*font-size: 110%;*/
+    max-width: 100ch;
     margin: auto;
     margin-bottom: 2em;
+    font-size: 17px;
+    line-height: 1.6rem;
 }
 p {
     text-align: justify;
     text-justify: inter-word;
-    font-size: 17px;
-    line-height: 1.4rem;
+    /*font-size: 17px;
+    line-height: 1.4rem;*/
 }
 b {
     /*font-family: 'CMU Serif Bold', sans-serif;*/
@@ -67,9 +60,10 @@ em {
 h1, h2, h3, h4, h5, h6 {
     /*font-family: 'CMU Serif Bold', sans-serif;*/
     /*font-family: 'CMU Concrete Bold', sans-serif;*/
+    line-height: 1em;
 }
 body img {
-   width: 100%;
+   max-width: 100%;
 }
 /*a:link { color: #008FFF; text-decoration: none; }
 a:visited { color: #008FFF; text-decoration: none; }
