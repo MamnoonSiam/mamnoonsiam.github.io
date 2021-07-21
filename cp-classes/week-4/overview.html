@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Week 4 | Introduction to Interactive Problems
+    </title>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MMLorHTML: { prefer: "HTML" },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../../css/style.css">
+  </head>
+
+  <body>
+    <h1>
+      Week 4 | Introduction to Interactive Problems
+    </h1>
+    <h4><i>21 July, 2021</i></h4>
+
+    <h2>What was discussed?</h2>
+    These problems:
+    <ol>
+      <li>
+        <a href="https://toph.co/p/an-obvious-interactive-problem">An Obvious Interactive Problem</a>
+      </li>
+      <li>
+        <a href="https://toph.co/p/the-lone-wolf">The Lone Wolf</a>
+      </li>
+      <li>
+        <a href="https://toph.co/p/a-new-tough-game">A New Tough Game</a>
+      </li>
+      <li>
+        <a href="https://toph.co/p/bulls-cows-and-digits">Bulls, Cows and Digits</a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/problemset/problem/1479/A">Codeforces 1479A</a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/problemset/problem/1167/B">Codeforces 1167B</a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/group/wUWXh1K7Gk/contest/303511/problem/D">BdOI 2020 Divisional</a>
+      </li>
+    </ol>
+    <h3>Task</h3>
+    At the end of the class, participants were assigned to solve the following problem and
+    dm me the solution if they had found it. If you are reading this now, give it a try!
+
+    <br>
+
+    <b>Task:</b> Computer has a hidden string $s$ of length $n$, where $s_i
+    \in \{A,B,X,Y\}$. Although you don't know the string $s$, you know its
+    length $n$. You also know that the first character of $s$ never reappears
+    in it. You can use the utility function $\texttt{ask}(p)$, where $p$ is a
+    string, $p_i \in \{A,B,X,Y\}$, $|p| \le 4n$. It returns the the length of
+    the longest prefix of $s$ that is also a substring of $p$. Your target is
+    to find $s$ using $\texttt{ask}$ as few times as possible. Subtasks: <ul>
+      <li>
+        (5 points) $n = 3$.
+      </li>
+      <li>
+        (95 points) Let $q$ be the number of calls to $\texttt{ask}$.
+        <ul>
+          <li>If $q \le n+2$, your score is 95.</li>
+          <li>If $n+2 < q \le n+10$, your score is 95 - 3(q-n-2).</li>
+          <li>If $n+10 < q < 2n+1$, your score is 25.</li>
+          <li>If $\max(n+10,2n+1) < q \le 4n$, your score is 5.</li>
+          <li>Otherwise, your score is 0.</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Recording</h2>
+    <p>
+      <iframe width="683" height="384"
+        src="https://www.youtube.com/embed/8Qq4CO0kyUg" allowfullscreen>
+      </iframe>
+    </p>
+  </body>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async src="https://www.googletagmanager.com/gtag/js?id=UA-146309365-1">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146309365-1');
+  </script>
+  <script src="./javascripts/scale.fix.js"></script>
+</html>
